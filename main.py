@@ -79,11 +79,11 @@ class Video(Resource):
 		return result
 
 
-	def delete(self, video_id):
-		abort_if_video_id_doesnt_exist(video_id)
-		result = VideoModel.query.filter_by(id=video_id).first()
-		del result[video_id]
-		return '', 204
+# 	def delete(self, video_id):
+# 		abort_if_video_id_doesnt_exist(video_id)
+# 		result = VideoModel.query.filter_by(id=video_id).first()
+# 		del result[video_id]
+# 		return '', 204
 
 
 api.add_resource(Video, "/video/<int:video_id>")
